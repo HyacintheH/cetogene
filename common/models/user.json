@@ -1,0 +1,16 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "customers": {
+      "type": "hasMany",
+      "model": "customer",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

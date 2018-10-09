@@ -1,0 +1,169 @@
+{
+  "name": "Repas",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": false,
+    "postgresql": {
+      "schema": "public",
+      "table": "repas"
+    },
+    "relations": {
+      "repasCustomerrel": {
+        "model": "Customer",
+        "type": "belongsTo",
+        "foreignKey": "customerId"
+      },
+      "elements_repas": {
+        "type": "hasMany",
+        "model": "ElementRepas",
+        "foreignKey": "repasId",
+        "primaryKey": "id"
+      },
+      "regimeUserrel": {
+        "model": "User",
+        "type": "belongsTo",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "id": 1,
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "dateCreated": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "date_created",
+        "dataType": "timestamp with time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "customerId": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "customer_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "totCalories": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": 24,
+      "scale": null,
+      "postgresql": {
+        "columnName": "tot_calories",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 24,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "totGlucides": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": 24,
+      "scale": null,
+      "postgresql": {
+        "columnName": "tot_glucides",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 24,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "totProtides": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": 24,
+      "scale": null,
+      "postgresql": {
+        "columnName": "tot_protides",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 24,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "totLipides": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": 24,
+      "scale": null,
+      "postgresql": {
+        "columnName": "tot_lipides",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 24,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "userId": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

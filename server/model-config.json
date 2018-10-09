@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "cetogene",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "AccessToken": {
+    "dataSource": "cetogene",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "cetogene",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "cetogene",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "cetogene",
+    "public": false
+  },
+  "Customer": {
+    "dataSource": "cetogene",
+    "public": true
+  },
+  "Aliment": {
+    "dataSource": "cetogene",
+    "public": true
+  },
+  "Repas": {
+    "dataSource": "cetogene",
+    "public": true
+  },
+  "ElementRepas": {
+    "dataSource": "cetogene",
+    "public": true
+  },
+  "Regime": {
+    "dataSource": "cetogene",
+    "public": true
+  },
+  "Email": {
+    "dataSource": "emailDs"
+  }
+}
